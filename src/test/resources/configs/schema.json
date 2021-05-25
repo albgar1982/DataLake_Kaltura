@@ -1,0 +1,45 @@
+{
+  "type": "struct",
+  "fields": [
+    {
+      "name": "metadata",
+      "type": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "description",
+            "type": "string",
+            "nullable": true,
+            "metadata": {}
+          },
+          {
+            "name": "title",
+            "type": "string",
+            "nullable": true,
+            "metadata": {}
+          }
+        ]
+      },
+      "nullable": true,
+      "metadata": {}
+    },
+    {
+      "name": "dob",
+      "type": "string",
+      "nullable": true,
+      "metadata": {}
+    },
+    {
+      "name": "gender",
+      "type": "string",
+      "nullable": true,
+      "metadata": {}
+    },
+    {
+      "name": "salary",
+      "type": "integer",
+      "nullable": true,
+      "metadata": {}
+    }
+  ]
+}

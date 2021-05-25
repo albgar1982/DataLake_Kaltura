@@ -1,0 +1,33 @@
+package com.jumptvs.etls.model.m7.sources
+
+trait Playbacks extends FrontendUsers {
+  val playSessionID = "PlaySessionID"
+  val playStartTime = "PlayStartTime"
+  val userIdPlayback = "UserId"
+  val SSOID = "SSOID"
+  val assetType = "AssetType"
+  val assetID = "AssetID"
+  val assetName = "AssetName"
+  val assetSolocooID = "AssetSolocooID"
+  val assetOwner = "AssetOwner"
+  val assetDuration = "AssetDuration"
+  val playDuration = "PlayDuration"
+  val playDurationExPause = "PlayDurationExPause"
+  val playSerial = "PlaySerial"
+  val playOfferId = "PlayOfferId"
+  val playOfferName = "PlayOfferName"
+  val playOfferFrom = "PlayOfferFrom"
+  val playOfferTo = "PlayOfferTo"
+  val playSubscription = "PlaySubscription"
+  val communityName = "CommunityName"
+  val deviceMainType = "DeviceMainType"
+  val deviceSubType = "DeviceSubType"
+  val channelName = "ChannelName"
+  val internalPlayStartTime = "internalplaystarttime"
+  val internalPlayStartTimeStr = "internalplaystarttimestr"
+  val internalPlayStartTimeCrossEpg = "internalplaystarttimecrossepg"
+  val registeredUserDaydate = "registeredUserDaydate"
+  val activationDaydate =  "activationdaydate"
+  val deactivationDaydate =  "deactivationdaydate"
+
+}

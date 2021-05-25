@@ -1,0 +1,166 @@
+{
+  "customerIdentifier": "af6f35ba-5f82-11ea-b6ba-0354e9fb4247",
+  "brandId": "local",
+  "brandName": "m7",
+  "environment": "local",
+  "logLevel": "ERROR",
+  "processes": [
+    {
+      "table": "playbackActivity",
+      "days": "320"
+    },
+    {
+    "table": "userActivity",
+    "days": "320"
+    },
+    {
+    "table": "catalogue",
+    "days": "500"
+  }],
+  "brandids": [{
+    "name": "HD Austria",
+    "id": "291bfcf4-5f83-11ea-b6ba-8fc2f567b0a6"
+  },{
+    "name": "UPC Direct",
+    "id": "2cf05684-6827-11ea-af6b-5f001913e5a9"
+  },{
+    "name": "TÉLÉSAT",
+    "id": "2da53186-6826-11ea-af68-93796c778fcc"
+  },{
+    "name": "Canal Digitaal",
+    "id": "4c823bea-6825-11ea-af65-f3eb61b02cab"
+  },{
+    "name": "Canal Digitaal - Resellers",
+    "id": "7a97ec46-6825-11ea-af66-1bed97ede7d0"
+  },{
+    "name": "TV VLAANDEREN",
+    "id": "af872732-6825-11ea-af67-1bb825789bd7"
+  },{
+    "name": "Focus Sat",
+    "id": "cd0f3190-6826-11ea-af6a-13e3c38f55f9"
+  }],
+  "source": {
+    "path": "./seeds/",
+    "format": "parquet"
+  },
+  "target": {
+    "path": "./target/",
+    "format": "parquet"
+  },
+    "operations": [
+      {
+        "name": "filterByDaydate",
+        "columns": [
+          "daydate"
+        ]
+      },
+      {
+        "name": "filterByBrandId",
+        "columns": [
+          "brandid"
+        ]
+      },
+      {
+        "name": "selectSubscribersColumns",
+        "columns": [
+          "user_id",
+          "subscription_type",
+          "subscription_package_name",
+          "region",
+          "subscription_status",
+          "subscription_package_id",
+          "subscription_start_country_datetime",
+          "subscription_cancellation_country_datetime",
+          "subscription_trial_days",
+          "brandid"
+        ]
+      },
+      {
+        "name": "selectUserActivityBackendColumns",
+        "columns": [
+          "user_id",
+          "country",
+          "gender",
+          "birthday",
+          "email",
+          "registration_datetime",
+          "open_to_receive_communications"
+        ]
+      },
+      {
+        "name": "selectUserActivityFrontendColumns",
+        "columns": [
+          "registered",
+          "name"
+        ]
+      },
+      {
+        "name": "selectPlaybackBackendColumns",
+        "columns": [
+          "user_id",
+          "country"
+        ]
+      },
+      {
+        "name": "selectPlaybackFrontendColumns",
+        "columns": [
+          "userid",
+          "name",
+          "internalname"
+        ]
+      },
+      {
+        "name": "selectPlaybackColumns",
+        "columns": [
+          "UserId",
+          "playsubscription",
+          "assetowner",
+          "assetid",
+          "assetname",
+          "assettype",
+          "playofferid",
+          "playstarttime",
+          "playdurationexpause",
+          "assetduration",
+          "communityname",
+          "devicemaintype",
+          "devicesubtype",
+          "SSOID",
+          "brandid",
+          "daydate"
+        ]
+      },
+      {
+        "name": "selectPlaybackCatalogueColumns",
+        "columns": [
+          "external_id",
+          "genres",
+          "series_title",
+          "season",
+          "owner",
+          "episode",
+          "title"
+        ]
+      },
+      {
+        "name": "selectSubscribersForPlaybacksColumns",
+        "columns": [
+          "subscription_package_name",
+          "subscription_package_id",
+          "subscription_id",
+          "user_id",
+          "country"
+        ]
+      },
+      {
+        "name": "selectEpgColumns",
+        "columns": [
+          "channel_name",
+          "program_title",
+          "broadcast_datetime",
+          "duration_seconds",
+          "station_id"
+        ]
+      }
+    ]
+  }
