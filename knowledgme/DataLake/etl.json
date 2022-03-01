@@ -1,0 +1,122 @@
+{
+  "enriched_raw": {
+    "beacon": {
+      "users": {
+        "storage": {
+          "sources": {
+            "users": "./seeds/raw/beacon"
+          },
+          "target": {
+            "subPath": "beacon"
+          }
+        },
+        "strategy": {
+          "alwaysFull": true,
+          "windowOfDays": 0,
+          "historialMaximum": 24
+        }
+      },
+      "entitlements": {
+        "storage": {
+          "sources": {
+            "entitlements": "./seeds/raw/beacon"
+          },
+          "target": {
+            "subPath": "beacon"
+          }
+        },
+        "strategy": {
+          "alwaysFull": true,
+          "windowOfDays": 0,
+          "historialMaximum": 24
+        }
+      }
+    },
+    "brightcove": {
+      "cms": {
+        "storage": {
+          "sources": {
+            "cms": "./seeds/raw/brightcove"
+          },
+          "target": {
+            "subPath": "brightcove"
+          }
+        },
+        "strategy": {
+          "alwaysFull": true,
+          "windowOfDays": 0,
+          "historialMaximum": 24
+        }
+      },
+      "playbacks": {
+        "storage": {
+          "sources": {
+            "playbacks": "./seeds/raw/brightcove"
+          },
+          "target": {
+            "subPath": "brightcove"
+          }
+        },
+        "strategy": {
+          "alwaysFull": true,
+          "windowOfDays": 0,
+          "historialMaximum": 24
+        }
+      }
+    }
+  },
+  "data_warehouse": {
+    "playbacks": {
+      "fact_catalogue": {
+        "storage": {
+          "sources": {
+            "cms": "./results/enriched_raw/brightcove",
+            "fact_catalogue": "./results/data_warehouse"
+          },
+          "target": {
+            "subPath": ""
+          }
+        },
+        "strategy": {
+          "alwaysFull": false,
+          "windowOfDays": 0,
+          "historialMaximum": 24
+        }
+      },
+      "playbackactivity": {
+        "storage": {
+          "sources": {
+            "fact_catalogue": "./results/data_warehouse",
+            "playbacks": "./results/enriched_raw/brightcove"
+          },
+          "target": {
+            "subPath": ""
+          }
+        },
+        "strategy": {
+          "alwaysFull": false,
+          "windowOfDays": 0,
+          "historialMaximum": 24
+        }
+      }
+    },
+    "subscriptions": {
+      "fact_useractivity": {
+        "storage": {
+          "sources": {
+            "users": "./results/enriched_raw/beacon",
+            "entitlements": "./results/enriched_raw/beacon"
+          },
+          "target": {
+            "subPath": ""
+          }
+        },
+        "strategy": {
+          "alwaysFull": false,
+          "windowOfDays": 0,
+          "historialMaximum": 24
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,580 @@
+{
+  "fact_useractivity": {
+    "schema": {
+      "product": {
+        "brandid": {
+          "type": "string",
+          "validation": {
+            "columnProperties": [
+              "notNull"
+            ]
+          }
+        },
+        "userid": {
+          "type": "string",
+          "validation": {
+            "columnProperties": [
+              "notNull"
+            ]
+          }
+        },
+        "suscriptionid": {
+          "type": "string",
+          "validation": {
+            "columnProperties": [
+              "notNull"
+            ]
+          }
+        },
+        "yeardate": {
+          "type": "string",
+          "validation": {
+            "columnProperties": [
+              "notNull",
+              "nonNegative",
+              "formatYearDate"
+            ]
+          }
+        },
+        "monthdate": {
+          "type": "string",
+          "validation": {
+            "columnProperties": [
+              "notNull",
+              "nonNegative",
+              "formatMonthDate"
+            ]
+          }
+        },
+        "daydate": {
+          "type": "integer",
+          "validation": {
+            "columnProperties": [
+              "notNull",
+              "nonNegative",
+              "formatDayDate"
+            ]
+          }
+        },
+        "eventtype": {
+          "type": "string",
+          "validation": {
+            "columnProperties": [
+              "notNull"
+            ],
+            "containedIn": [
+              "Start",
+              "ProductTypeChange",
+              "StateChange",
+              "End"
+            ]
+          }
+        },
+        "event": {
+          "type": "string",
+          "validation": {
+            "columnProperties": [
+              "notNull"
+            ],
+            "containedIn": [
+              "Subscription",
+              "PayingSubscription",
+              "Standalone",
+              "TrialSubscription",
+              "Registration"
+            ]
+          }
+        },
+        "status": {
+          "type": "string",
+          "validation": {
+            "columnProperties": [
+              "notNull"
+            ],
+            "containedIn": [
+              "PayingSubscription",
+              "TrialSubscription",
+              "NA"
+            ]
+          }
+        },
+        "producttype": {
+          "type": "string",
+          "validation": {
+            "columnProperties": [
+              "notNull","nonEmpty"
+            ]
+          }
+        },
+        "countrycode": {
+          "type": "string",
+          "validation": {
+            "containedIn": [
+              "NA",
+              "formatCountryCode"
+            ]
+          }
+        },
+        "regioncode": {
+          "type": "string",
+          "validation": {
+            "containedIn": [
+              "NA",
+              "formatRegionCode"
+            ]
+          }
+        },
+        "operator": {
+          "type": "string",
+          "validation": {
+            "containedIn": [
+              "NA"
+            ]
+          }
+        },
+        "origin": {
+          "type": "string",
+          "validation": {
+            "containedIn": [
+              "NA"
+            ]
+          }
+        },
+        "gender": {
+          "type": "string",
+          "validation": {
+            "containedIn": [
+              "NA",
+              "female",
+              "male",
+              "other"
+            ]
+          }
+        },
+        "birth": {
+          "type": "string",
+          "validation": {
+            "containedIn": [
+              "NA"
+            ]
+          }
+        },
+        "city": {
+          "type": "string",
+          "validation": {
+            "containedIn": [
+              "NA"
+            ]
+          }
+        },
+        "email": {
+          "type": "string",
+          "validation": {
+            "containedIn": [
+              "NA"
+            ]
+          }
+        },
+        "paymentmethod": {
+          "type": "string",
+          "validation": {
+            "containedIn": [
+              "NA"
+            ]
+          }
+        },
+        "householdtype": {
+          "type": "string",
+          "validation": {
+            "containedIn": [
+              "NA"
+            ]
+          }
+        },
+          "cancellationtype": {
+            "type": "string",
+            "validation": {
+              "containedIn": [
+                "NA",
+                "User",
+                "Service"
+              ]
+            }
+          },
+        "addon": {
+          "type": "string",
+          "validation": {
+            "containedIn": [
+              "NA"
+            ]
+          }
+        }
+      },
+        "adhoc": {}
+      }
+    },
+    "playbackactivity": {
+      "schema": {
+        "product": {
+          "brandid": {
+            "type": "string",
+            "validation": {
+              "columnProperties": [
+                "notNull"
+              ]
+            }
+          },
+          "userid": {
+            "type": "string",
+            "validation": {
+              "columnProperties": [
+                "notNull"
+              ]
+            }
+          },
+          "subscriptionid":{
+            "type": "string",
+            "validation": {
+              "columnProperties": ["notNull", "nonEmpty"]
+            }
+          },
+          "producttype": {
+            "type": "string",
+            "validation": {
+              "columnProperties": ["notNull", "nonEmpty"]
+            }
+          },
+          "daydate": {
+            "type": "integer",
+            "validation": {
+              "columnProperties": [
+                "notNull",
+                "nonEmpty",
+                "formatDayDate"
+              ]
+            }
+          },
+          "yeardate": {
+            "type": "string",
+            "validation": {
+              "columnProperties": [
+                "notNull",
+                "nonEmpty",
+                "formatYearDate"
+              ]
+            }
+          },
+          "monthdate": {
+            "type": "string",
+            "validation": {
+              "columnProperties": [
+                "notNull",
+                "nonEmpty",
+                "formatMonthDate"
+              ]
+            }
+          },
+          "hourdate": {
+            "type": "string",
+            "validation": {
+              "columnProperties": ["notNull", "nonEmpty", "formatHourDate"]
+            }
+          },
+          "contentduration": {
+            "type": "long",
+            "validation": {
+              "columnProperties": ["notNull", "nonNegative", "formatMilliseconds"]
+            }
+          },
+          "contentid": {
+            "type": "string",
+            "validation": {
+              "columnProperties": ["notNull", "nonEmpty","formatContentId"]
+            }
+          },
+          "contenttype": {
+            "type": "string",
+            "validation": {
+              "columnProperties": ["notNull", "nonEmpty"]
+            }
+          },
+          "consumptiontype": {
+            "type": "string",
+            "validation": {
+              "columnProperties": ["notNull", "nonEmpty"]
+            }
+          },
+          "countrycode": {
+            "type": "string",
+            "validation": {
+              "columnProperties": [
+                "notNull",
+                "nonEmpty"
+              ],
+              "pattern": "(^[a-z]{2}$)"
+            }
+          },
+          "regioncode": {
+            "type": "string",
+            "validation": {
+              "columnProperties": [
+                "notNull",
+                "nonEmpty"
+              ],
+              "pattern": "(^[a-z]{2}-([a-z]{3}|[a-z]{2})|[a-z]{2}$)"
+            }
+          },
+          "title": {
+            "type": "string",
+            "validation": {
+              "columnProperties": ["notNull", "nonEmpty"]
+            }
+          },
+          "channel": {
+            "type": "string",
+            "validation": {
+              "columnProperties": ["notNull", "nonEmpty"]
+            }
+          },
+          "operator": {
+            "type": "string",
+            "validation": {
+              "columnProperties": ["notNull", "nonEmpty"]
+            }
+          },
+          "serietitle": {
+            "type": "string",
+            "validation": {
+              "columnProperties": ["nonEmpty","notNull"]
+            }
+          },
+          "season": {
+            "type": "string",
+            "validation": {
+              "columnProperties": ["nonEmpty","notNull"]
+            }
+          },
+          "episode": {
+            "type": "string",
+            "validation": {
+              "columnProperties": ["nonEmpty","notNull"]
+            }
+          },
+          "fulltitle": {
+            "type": "string",
+            "validation": {
+              "columnProperties": [
+                "notNull","notNull"
+              ],
+              "product": {
+                "(.*[a-zA-Z0-9]\\W[S]\\-[0-9]+\\W[E]\\-[0-9]+\\W[a-zA-Z0-9].*)": [
+                  "Episode",
+                  "Podcast",
+                  "Documental"
+                ]
+              }
+            }
+          },
+          "genres": {
+            "type": "string",
+            "validation": {
+              "columnProperties": ["nonEmpty","notNull"]
+            }
+          },
+          "playbacktime": {
+            "type": "long",
+            "validation": {
+              "columnProperties": [
+                "notNull",
+                "nonNegative",
+                "formatMilliseconds"
+              ]
+            }
+          },
+          "origin": {
+            "type": "string",
+            "validation": {
+              "columnProperties": ["notNull", "nonEmpty"],
+              "pattern": "(^\\b[A-Z\\s]+\\b$)"
+            }
+          },
+          "device": {
+            "type": "string",
+            "validation": {
+              "columnProperties": ["notNull", "nonNegative"]
+            }
+          },
+          "devicetype": {
+            "type": "string",
+            "validation": {
+              "columnProperties": [
+                "notNull"
+              ]
+            }
+          }
+        },
+        "adhoc": {
+        }
+      }
+    },
+    "fact_catalogue": {
+      "schema": {
+        "product": {
+          "brandid": {
+            "type": "string",
+            "validation": {
+              "columnProperties": [
+                "notNull",
+                "formatUUID"
+              ]
+            }
+          },
+          "contentduration": {
+            "type": "long",
+            "validation": {
+              "columnProperties": [
+                "notNull",
+                "nonNegative",
+                "formatMilliseconds"
+              ]
+            }
+          },
+          "contenttype": {
+            "type": "string",
+            "validation": {
+              "columnProperties": [
+                "notNull",
+                "nonEmpty"
+              ]
+            }
+          },
+          "consumptiontype": {
+            "type": "string",
+            "validation": {
+              "columnProperties": [
+                "notNull",
+                "nonEmpty"
+              ]
+            }
+          },
+          "contentid": {
+            "type": "string",
+            "validation": {
+              "columnProperties": [
+                "notNull"
+              ]
+            }
+          },
+          "serieid": {
+            "type": "string",
+            "validation": {
+              "columnProperties": [
+                "notNull",
+                "nonEmpty"
+              ]
+            }
+          },
+          "title": {
+            "type": "string",
+            "validation": {
+              "columnProperties": [
+                "notNull",
+                "nonEmpty"
+              ]
+            }
+          },
+          "channel": {
+            "type": "string",
+            "validation": {
+              "columnProperties": [
+                "notNull",
+                "nonEmpty"
+              ]
+            }
+          },
+          "serietitle": {
+            "type": "string",
+            "validation": {
+              "columnProperties": [
+                "notNull",
+                "nonEmpty"
+              ]
+            }
+          },
+          "season": {
+            "type": "string",
+            "validation": {
+              "columnProperties": [
+                "notNull",
+                "nonEmpty"
+              ]
+            }
+          },
+          "episode": {
+            "type": "string",
+            "validation": {
+              "columnProperties": [
+                "notNull",
+                "nonEmpty"
+              ]
+            }
+          },
+          "fulltitle": {
+            "type": "string",
+            "validation": {
+              "columnProperties": [
+                "notNull"
+              ],
+              "product": {
+                "(.*[a-zA-Z0-9]\\W[S]\\-[0-9]+\\W[E]\\-[0-9]+\\W[a-zA-Z0-9].*)": [
+                  "Episode",
+                  "Podcast",
+                  "Documental"
+                ]
+              }
+            }
+          },
+          "genres": {
+            "type": "string",
+            "validation": {
+              "columnProperties": [
+                "notNull",
+                "nonEmpty"
+              ]
+            }
+          },
+          "network": {
+            "type": "string",
+            "validation": {
+              "columnProperties": [
+                "notNull",
+                "nonEmpty"
+              ]
+            }
+          },
+          "countrycode": {
+            "type": "string",
+            "validation": {
+              "columnProperties": [
+                "notNull",
+                "nonEmpty"
+              ],
+              "pattern": "(^[a-z]{2}$)"
+            }
+          },
+          "daydate": {
+            "type": "integer",
+            "validation": {
+              "columnProperties": [
+                "notNull",
+                "nonEmpty",
+                "formatDayDate"
+              ]
+            }
+          }
+        },
+        "adhoc": {
+        }
+      }
+    }
+  }

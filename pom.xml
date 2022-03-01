@@ -1,122 +1,95 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.jumptvs.etls</groupId>
-  <artifactId>kaltura</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <inceptionYear>2020</inceptionYear>
+  <groupId>com.jumpdd.DataLake.template</groupId>
+  <artifactId>Sample</artifactId>
+  <version>1.0</version>
+  <inceptionYear>2021</inceptionYear>
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <encoding>UTF-8</encoding>
-    <scala.version>2.11.12</scala.version>
-    <scala.compat.version>2.11</scala.compat.version>
+    <spark.version>3.2.0</spark.version>
+    <scala.version>2.12.12</scala.version>
+    <cucumber.version>6.10.4</cucumber.version>
+    <scala.compat.version>2.12</scala.compat.version>
   </properties>
   <dependencies>
     <dependency>
-      <groupId>com.vitorsvieira</groupId>
-      <artifactId>scala-iso_2.11</artifactId>
-      <version>0.1.2</version>
-    </dependency>
-    <dependency>
-      <groupId>org.scalaj</groupId>
-      <artifactId>scalaj-http_2.11</artifactId>
-      <version>2.4.2</version>
+      <groupId>org.scala-lang</groupId>
+      <artifactId>scala-compiler</artifactId>
+      <version>${scala.version}</version>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>org.scala-lang</groupId>
-      <artifactId>scala-library</artifactId>
-      <version>2.11.12</version>
+      <artifactId>scala-reflect</artifactId>
+      <version>${scala.version}</version>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.spark</groupId>
-      <artifactId>spark-sql_2.11</artifactId>
-      <version>2.4.2</version>
-      <scope>provided</scope>
+      <artifactId>spark-sql_${scala.compat.version}</artifactId>
+      <version>${spark.version}</version>
     </dependency>
     <dependency>
       <groupId>org.typelevel</groupId>
-      <artifactId>cats-core_2.11</artifactId>
+      <artifactId>cats-core_${scala.compat.version}</artifactId>
       <version>1.6.0</version>
+      <scope>compile</scope>
     </dependency>
-    <dependency>
-      <groupId>com.typesafe.scala-logging</groupId>
-      <artifactId>scala-logging_2.11</artifactId>
-      <version>3.9.2</version>
-    </dependency>
-    <dependency>
-      <groupId>org.tpolecat</groupId>
-      <artifactId>doobie-core_2.11</artifactId>
-      <version>0.7.0</version>
-    </dependency>
-    <dependency>
-      <groupId>org.tpolecat</groupId>
-      <artifactId>doobie-postgres_2.11</artifactId>
-      <version>0.7.0</version>
-    </dependency>
-    <dependency>
-      <groupId>org.rogach</groupId>
-      <artifactId>scallop_2.11</artifactId>
-      <version>3.3.1</version>
-    </dependency>
+
     <!-- Test -->
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.12</version>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-scala_${scala.compat.version}</artifactId>
+      <version>${cucumber.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-junit</artifactId>
+      <version>${cucumber.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.scalatest</groupId>
-      <artifactId>scalatest_2.11</artifactId>
-      <version>3.0.5</version>
+      <artifactId>scalatest_${scala.compat.version}</artifactId>
+      <version>3.2.10</version>
+      <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.scala-tools.testing</groupId>
-      <artifactId>specs</artifactId>
-      <version>1.6.2.2_1.5.0</version>
+      <groupId>com.amazon.deequ</groupId>
+      <artifactId>deequ</artifactId>
+      <version>2.0.0-spark-3.1</version>
       <scope>test</scope>
+    </dependency>
+
+    <!-- Core -->
+    <dependency>
+      <groupId>com.influxdb</groupId>
+      <artifactId>influxdb-client-scala_${scala.compat.version}</artifactId>
+      <version>4.0.0</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.lihaoyi</groupId>
+      <artifactId>sourcecode_${scala.compat.version}</artifactId>
+      <version>0.2.7</version>
+    </dependency>
+    <dependency>
+      <groupId>com.lihaoyi</groupId>
+      <artifactId>os-lib_${scala.compat.version}</artifactId>
+      <version>0.7.8</version>
+    </dependency>
+    <dependency>
+      <groupId>com.lihaoyi</groupId>
+      <artifactId>upickle_sjs1_${scala.compat.version}</artifactId>
+      <version>1.4.2</version>
     </dependency>
   </dependencies>
   <build>
     <sourceDirectory>src/main/scala</sourceDirectory>
     <plugins>
-      <plugin>
-        <!-- see http://davidb.github.com/scala-maven-plugin -->
-        <groupId>net.alchim31.maven</groupId>
-        <artifactId>scala-maven-plugin</artifactId>
-        <version>3.3.2</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>compile</goal>
-              <goal>testCompile</goal>
-            </goals>
-            <configuration>
-              <args>
-                <arg>-dependencyfile</arg>
-                <arg>${project.build.directory}/.scala_dependencies</arg>
-                <arg>-Ypartial-unification</arg>
-              </args>
-              <compilerPlugins>
-                <compilerPlugin>
-                  <groupId>org.scalamacros</groupId>
-                  <artifactId>paradise_${scala.version}</artifactId>
-                  <version>2.1.1</version>
-                </compilerPlugin>
-              </compilerPlugins>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.21.0</version>
-        <configuration>
-          <!-- Tests will be run with scalatest-maven-plugin instead -->
-          <skipTests>true</skipTests>
-        </configuration>
-      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
@@ -129,7 +102,7 @@
             </goals>
             <configuration>
               <outputDirectory>${project.build.directory}/dependencies</outputDirectory>
-              <includeScope>runtime</includeScope>
+              <includeScope>compile</includeScope>
             </configuration>
           </execution>
         </executions>
