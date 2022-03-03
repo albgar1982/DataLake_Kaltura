@@ -44,12 +44,9 @@ class catalogueTests extends AnyFunSuite with should.Matchers with BeforeAndAfte
 
   test("convert csv to parquet") {
     val spark = Spark.configureSparkSession()
-    val pathReadParquet = "seeds/raw/accedo_one/playbacks"
-    val readParquetFile = "seeds/raw/accedo_one/playbacks"
 
-    val pathWriteParquet = "seeds/raw/playbacksessions"
-    val pathReadCsv = "seeds/samples/seeds_kaltura_fake/raw_playbacksessions.csv"
-    val pathWriteCsv = " "
+    val pathWriteParquet = "seeds/raw/transactions"
+    val pathReadCsv = "seeds/samples/seeds_kaltura_fake/raw_transactions.csv"
 
     val df = spark.read.option("header", "true")
       .option("inferSchema", "true")
