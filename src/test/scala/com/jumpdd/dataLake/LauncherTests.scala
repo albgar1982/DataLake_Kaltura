@@ -1,6 +1,6 @@
 package com.jumpdd.dataLake
 
-import com.jumpdd.dataLake.core.ArgumentsConfig
+import dataLake.core.{ArgumentsConfig, Launcher}
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should
 

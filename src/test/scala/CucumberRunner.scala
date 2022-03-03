@@ -7,12 +7,10 @@ import org.junit.runner.RunWith
   plugin = Array("pretty", "html:target/cucumber/html"),
   features = Array(
     "classpath:features/1_Setup.feature",
-    "classpath:features/DataWarehouse/FactUserActivity.feature",
-    "classpath:features/DataWarehouse/FactCatalogue.feature",
-    "classpath:features/DataWarehouse/PlaybackActivity.feature"
+    "classpath:features/DataWarehouse/PlaybackActivity.feature",
+    "classpath:features/DataWarehouse/Catalogue.feature",
+    "classpath:features/DataWarehouse/UserActivity.feature"
   ),
   //tags = Array("not @Wip"),
 )
-class CucumberRunner {
-
-}
+class CucumberRunner {}
