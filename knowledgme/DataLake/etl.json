@@ -1,16 +1,15 @@
 {
   "enriched_raw": {
-    "accedo": {
+    "kaltura": {
       "catalogue": {
         "storage": {
           "sources": {
             "catalogue": {
-              "path": "s3://jptvs-data-pro-us-west-2-0ef7c99a-355f-11eb-9916-2b51b3ca4c38/raw/accedo_one",
-              "schema": {"type":"struct","fields":[{"name":"contentObject","type":{"type":"struct","fields":[{"name":"collectionDetails","type":{"type":"struct","fields":[{"name":"static","type":{"type":"struct","fields":[{"name":"objects","type":{"type":"array","elementType":{"type":"struct","fields":[{"name":"id","type":"string","nullable":true,"metadata":{}},{"name":"objectType","type":"string","nullable":true,"metadata":{}}]},"containsNull":true},"nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}},{"name":"customFields","type":{"type":"struct","fields":[{"name":"category","type":{"type":"struct","fields":[{"name":"string","type":"string","nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}},{"name":"nielsenGenreCode","type":{"type":"struct","fields":[{"name":"string","type":"string","nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}},{"name":"one/universalSearch/apple/movieContentType","type":{"type":"struct","fields":[{"name":"string","type":"string","nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}},{"name":"titleClass","type":{"type":"struct","fields":[{"name":"string","type":"string","nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}},{"name":"metadata","type":{"type":"struct","fields":[{"name":"assets","type":{"type":"array","elementType":{"type":"struct","fields":[{"name":"image","type":{"type":"struct","fields":[{"name":"aspectRatio","type":"string","nullable":true,"metadata":{}},{"name":"height","type":"long","nullable":true,"metadata":{}},{"name":"kind","type":"string","nullable":true,"metadata":{}},{"name":"width","type":"long","nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}},{"name":"key","type":"string","nullable":true,"metadata":{}},{"name":"type","type":"string","nullable":true,"metadata":{}},{"name":"url","type":"string","nullable":true,"metadata":{}}]},"containsNull":true},"nullable":true,"metadata":{}},{"name":"availability","type":{"type":"struct","fields":[{"name":"availableFromDate","type":"string","nullable":true,"metadata":{}},{"name":"availableUntilDate","type":"string","nullable":true,"metadata":{}},{"name":"releaseDate","type":"string","nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}},{"name":"description","type":"string","nullable":true,"metadata":{}},{"name":"ids","type":{"type":"array","elementType":"string","containsNull":true},"nullable":true,"metadata":{}},{"name":"objectType","type":"string","nullable":true,"metadata":{}},{"name":"shortDescription","type":"string","nullable":true,"metadata":{}},{"name":"subtype","type":"string","nullable":true,"metadata":{}},{"name":"title","type":"string","nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}},{"name":"tvShow","type":{"type":"struct","fields":[{"name":"cast","type":{"type":"struct","fields":[{"name":"actors","type":{"type":"array","elementType":"string","containsNull":true},"nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}},{"name":"entitlementInfo","type":{"type":"struct","fields":[{"name":"level","type":"string","nullable":true,"metadata":{}},{"name":"tags","type":{"type":"array","elementType":"string","containsNull":true},"nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}},{"name":"genres","type":{"type":"array","elementType":"string","containsNull":true},"nullable":true,"metadata":{}},{"name":"parentalRatings","type":{"type":"array","elementType":{"type":"struct","fields":[{"name":"value","type":"string","nullable":true,"metadata":{}}]},"containsNull":true},"nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}},{"name":"tvShowEpisode","type":{"type":"struct","fields":[{"name":"episodeNumber","type":"long","nullable":true,"metadata":{}},{"name":"tvShowId","type":"string","nullable":true,"metadata":{}},{"name":"tvShowSeasonId","type":"string","nullable":true,"metadata":{}},{"name":"videoDetails","type":{"type":"struct","fields":[{"name":"cast","type":{"type":"struct","fields":[{"name":"actors","type":{"type":"array","elementType":"string","containsNull":true},"nullable":true,"metadata":{}},{"name":"directors","type":{"type":"array","elementType":"string","containsNull":true},"nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}},{"name":"duration","type":"string","nullable":true,"metadata":{}},{"name":"entitlementInfo","type":{"type":"struct","fields":[{"name":"level","type":"string","nullable":true,"metadata":{}},{"name":"tags","type":{"type":"array","elementType":"string","containsNull":true},"nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}},{"name":"genres","type":{"type":"array","elementType":"string","containsNull":true},"nullable":true,"metadata":{}},{"name":"parentalRatings","type":{"type":"array","elementType":{"type":"struct","fields":[{"name":"type","type":"string","nullable":true,"metadata":{}},{"name":"value","type":"string","nullable":true,"metadata":{}}]},"containsNull":true},"nullable":true,"metadata":{}},{"name":"playbackInfo","type":{"type":"struct","fields":[{"name":"subtitles","type":{"type":"array","elementType":{"type":"struct","fields":[{"name":"kind","type":"string","nullable":true,"metadata":{}},{"name":"label","type":"string","nullable":true,"metadata":{}},{"name":"languageCode","type":"string","nullable":true,"metadata":{}},{"name":"type","type":"string","nullable":true,"metadata":{}},{"name":"url","type":"string","nullable":true,"metadata":{}}]},"containsNull":true},"nullable":true,"metadata":{}},{"name":"trickPlayThumbnails","type":{"type":"array","elementType":{"type":"struct","fields":[{"name":"label","type":"string","nullable":true,"metadata":{}},{"name":"resolution","type":"string","nullable":true,"metadata":{}},{"name":"type","type":"string","nullable":true,"metadata":{}},{"name":"url","type":"string","nullable":true,"metadata":{}}]},"containsNull":true},"nullable":true,"metadata":{}},{"name":"videoStreams","type":{"type":"array","elementType":{"type":"struct","fields":[{"name":"containerType","type":"string","nullable":true,"metadata":{}},{"name":"drmInfo","type":{"type":"array","elementType":{"type":"struct","fields":[{"name":"type","type":"string","nullable":true,"metadata":{}}]},"containsNull":true},"nullable":true,"metadata":{}},{"name":"extras","type":{"type":"struct","fields":[{"name":"trickPlayAllowed","type":{"type":"struct","fields":[{"name":"boolean","type":"boolean","nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}},{"name":"label","type":"string","nullable":true,"metadata":{}},{"name":"resolution","type":"string","nullable":true,"metadata":{}},{"name":"streamType","type":"string","nullable":true,"metadata":{}},{"name":"url","type":"string","nullable":true,"metadata":{}}]},"containsNull":true},"nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}},{"name":"tvShowSeason","type":{"type":"struct","fields":[{"name":"entitlementInfo","type":{"type":"struct","fields":[{"name":"level","type":"string","nullable":true,"metadata":{}},{"name":"tags","type":{"type":"array","elementType":"string","containsNull":true},"nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}},{"name":"seasonNumber","type":"long","nullable":true,"metadata":{}},{"name":"tvShowId","type":"string","nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}},{"name":"video","type":{"type":"struct","fields":[{"name":"videoDetails","type":{"type":"struct","fields":[{"name":"cast","type":{"type":"struct","fields":[{"name":"actors","type":{"type":"array","elementType":"string","containsNull":true},"nullable":true,"metadata":{}},{"name":"directors","type":{"type":"array","elementType":"string","containsNull":true},"nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}},{"name":"duration","type":"string","nullable":true,"metadata":{}},{"name":"entitlementInfo","type":{"type":"struct","fields":[{"name":"level","type":"string","nullable":true,"metadata":{}},{"name":"tags","type":{"type":"array","elementType":"string","containsNull":true},"nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}},{"name":"genres","type":{"type":"array","elementType":"string","containsNull":true},"nullable":true,"metadata":{}},{"name":"parentalRatings","type":{"type":"array","elementType":{"type":"struct","fields":[{"name":"type","type":"string","nullable":true,"metadata":{}},{"name":"value","type":"string","nullable":true,"metadata":{}}]},"containsNull":true},"nullable":true,"metadata":{}},{"name":"playbackInfo","type":{"type":"struct","fields":[{"name":"subtitles","type":{"type":"array","elementType":{"type":"struct","fields":[{"name":"kind","type":"string","nullable":true,"metadata":{}},{"name":"label","type":"string","nullable":true,"metadata":{}},{"name":"languageCode","type":"string","nullable":true,"metadata":{}},{"name":"type","type":"string","nullable":true,"metadata":{}},{"name":"url","type":"string","nullable":true,"metadata":{}}]},"containsNull":true},"nullable":true,"metadata":{}},{"name":"trickPlayThumbnails","type":{"type":"array","elementType":{"type":"struct","fields":[{"name":"label","type":"string","nullable":true,"metadata":{}},{"name":"resolution","type":"string","nullable":true,"metadata":{}},{"name":"type","type":"string","nullable":true,"metadata":{}},{"name":"url","type":"string","nullable":true,"metadata":{}}]},"containsNull":true},"nullable":true,"metadata":{}},{"name":"videoStreams","type":{"type":"array","elementType":{"type":"struct","fields":[{"name":"containerType","type":"string","nullable":true,"metadata":{}},{"name":"drmInfo","type":{"type":"array","elementType":{"type":"struct","fields":[{"name":"type","type":"string","nullable":true,"metadata":{}}]},"containsNull":true},"nullable":true,"metadata":{}},{"name":"extras","type":{"type":"struct","fields":[{"name":"trickPlayAllowed","type":{"type":"struct","fields":[{"name":"boolean","type":"boolean","nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}},{"name":"label","type":"string","nullable":true,"metadata":{}},{"name":"resolution","type":"string","nullable":true,"metadata":{}},{"name":"streamType","type":"string","nullable":true,"metadata":{}},{"name":"url","type":"string","nullable":true,"metadata":{}}]},"containsNull":true},"nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}},{"name":"embeddedObjects","type":{"type":"struct","fields":[{"name":"tvShow","type":{"type":"struct","fields":[{"name":"collectionDetails","type":{"type":"struct","fields":[{"name":"static","type":{"type":"struct","fields":[{"name":"objects","type":{"type":"array","elementType":{"type":"struct","fields":[{"name":"id","type":"string","nullable":true,"metadata":{}},{"name":"objectType","type":"string","nullable":true,"metadata":{}}]},"containsNull":true},"nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}},{"name":"customFields","type":{"type":"struct","fields":[{"name":"category","type":{"type":"struct","fields":[{"name":"string","type":"string","nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}},{"name":"nielsenGenreCode","type":{"type":"struct","fields":[{"name":"string","type":"string","nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}},{"name":"titleClass","type":{"type":"struct","fields":[{"name":"string","type":"string","nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}},{"name":"metadata","type":{"type":"struct","fields":[{"name":"assets","type":{"type":"array","elementType":{"type":"struct","fields":[{"name":"image","type":{"type":"struct","fields":[{"name":"aspectRatio","type":"string","nullable":true,"metadata":{}},{"name":"height","type":"long","nullable":true,"metadata":{}},{"name":"kind","type":"string","nullable":true,"metadata":{}},{"name":"width","type":"long","nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}},{"name":"key","type":"string","nullable":true,"metadata":{}},{"name":"type","type":"string","nullable":true,"metadata":{}},{"name":"url","type":"string","nullable":true,"metadata":{}}]},"containsNull":true},"nullable":true,"metadata":{}},{"name":"availability","type":{"type":"struct","fields":[{"name":"releaseDate","type":"string","nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}},{"name":"description","type":"string","nullable":true,"metadata":{}},{"name":"ids","type":{"type":"array","elementType":"string","containsNull":true},"nullable":true,"metadata":{}},{"name":"objectType","type":"string","nullable":true,"metadata":{}},{"name":"subtype","type":"string","nullable":true,"metadata":{}},{"name":"title","type":"string","nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}},{"name":"tvShow","type":{"type":"struct","fields":[{"name":"cast","type":{"type":"struct","fields":[{"name":"actors","type":{"type":"array","elementType":"string","containsNull":true},"nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}},{"name":"entitlementInfo","type":{"type":"struct","fields":[{"name":"level","type":"string","nullable":true,"metadata":{}},{"name":"tags","type":{"type":"array","elementType":"string","containsNull":true},"nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}},{"name":"genres","type":{"type":"array","elementType":"string","containsNull":true},"nullable":true,"metadata":{}},{"name":"parentalRatings","type":{"type":"array","elementType":{"type":"struct","fields":[{"name":"value","type":"string","nullable":true,"metadata":{}}]},"containsNull":true},"nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}},{"name":"tvShowSeason","type":{"type":"struct","fields":[{"name":"collectionDetails","type":{"type":"struct","fields":[{"name":"static","type":{"type":"struct","fields":[{"name":"objects","type":{"type":"array","elementType":{"type":"struct","fields":[{"name":"id","type":"string","nullable":true,"metadata":{}}]},"containsNull":true},"nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}},{"name":"metadata","type":{"type":"struct","fields":[{"name":"ids","type":{"type":"array","elementType":"string","containsNull":true},"nullable":true,"metadata":{}},{"name":"objectType","type":"string","nullable":true,"metadata":{}},{"name":"subtype","type":"string","nullable":true,"metadata":{}},{"name":"title","type":"string","nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}},{"name":"tvShowSeason","type":{"type":"struct","fields":[{"name":"entitlementInfo","type":{"type":"struct","fields":[{"name":"level","type":"string","nullable":true,"metadata":{}},{"name":"tags","type":{"type":"array","elementType":"string","containsNull":true},"nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}},{"name":"seasonNumber","type":"long","nullable":true,"metadata":{}},{"name":"tvShowId","type":"string","nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}},{"name":"brandid","type":"string","nullable":true,"metadata":{}},{"name":"daydate","type":"integer","nullable":true,"metadata":{}}]}
+              "path": "./seeds/raw"
             }
           },
           "target": {
-            "subPath": "accedo_one"
+            "subPath": ""
           }
         },
         "strategy": {
@@ -19,15 +18,107 @@
           "historialMaximum": 24
         }
       },
-      "playbacks": {
+      "playbacklogs": {
         "storage": {
           "sources": {
-            "playbacks": {
-              "path": "./seeds/raw/accedo_one"
+            "playbacklogs": {
+              "path": "./seeds/raw"
+            },
+            "device_inventory": {
+              "path": "./seeds/raw"
+            },
+            "entitlementscancellations": {
+              "path": "./seeds/raw"
+            }
+          },
+
+          "target": {
+            "subPath": ""
+          }
+        },
+
+        "strategy": {
+          "alwaysFull": true,
+          "windowOfDays": 0,
+          "historialMaximum": 24
+        }
+      },
+      "playbacksessions": {
+        "storage": {
+          "sources": {
+            "playbacksessions": {
+              "path": "./seeds/raw"
+            },
+            "entitlements": {
+              "path": "./seeds/raw"
+              }
+          },
+
+          "target": {
+            "subPath": ""
+         }
+        },
+
+        "strategy": {
+          "alwaysFull": true,
+          "windowOfDays": 0,
+          "historialMaximum": 24
+        }
+      },
+
+      "entitlements_incremental": {
+        "storage": {
+          "sources": {
+            "households": {
+              "path": "./seeds/raw"
+            },
+            "entitlementscancellations": {
+              "path": "./seeds/raw"
             }
           },
           "target": {
-            "subPath": "accedo_one"
+            "subPath": ""
+          }
+        },
+
+        "strategy": {
+          "alwaysFull": true,
+          "windowOfDays": 0,
+          "historialMaximum": 24
+        }
+      },
+
+      "entitlements_snapshot": {
+        "storage": {
+          "sources": {
+            "entitlements": {
+              "path": "./seeds/raw"
+            },
+            "households": {
+              "path": "./seeds/raw"
+            }
+          },
+
+          "target": {
+            "subPath": ""
+          }
+        },
+
+        "strategy": {
+          "alwaysFull": true,
+          "windowOfDays": 0,
+          "historialMaximum": 24
+        }
+      },
+      "billing": {
+        "storage": {
+          "sources": {
+            "transactions": {
+              "path": "./seeds/raw"
+            }
+          },
+          "target": {
+            "subPath": ""
           }
         },
         "strategy": {
@@ -44,7 +135,7 @@
         "storage": {
           "sources": {
             "catalogue": {
-              "path": "./results/enriched_raw/accedo_one"
+              "path": "./results/enriched_raw"
             }
           },
           "target": {
@@ -57,16 +148,60 @@
           "historialMaximum": 24
         }
       },
-      "playbackactivity": {
+      "fact_playbacks": {
         "storage": {
           "sources": {
-            "catalogue": {"path": "./results/enriched_raw/accedo_one"},
-            "playbacks": {"path": "./results/enriched_raw/accedo_one"}
+            "fact_catalogue": "./results/data_warehouse",
+            "playbacklogs": "./results/enriched_raw/",
+            "playbacksessions": "./results/enriched_raw/"
           },
           "target": {
             "subPath": ""
           }
         },
+        "strategy": {
+          "alwaysFull": false,
+          "windowOfDays": 0,
+          "historialMaximum": 24
+        }
+      }
+    },
+    "subscriptions": {
+
+      "fact_billing": {
+        "storage": {
+          "sources": {
+            "billing": {
+              "path": "./results/enriched_raw"
+            }
+          },
+          "target": {
+            "subPath": ""
+          }
+        },
+        "strategy": {
+          "alwaysFull": false,
+          "windowOfDays": 0,
+          "historialMaximum": 24
+        }
+      },
+
+      "fact_useractivity": {
+        "storage": {
+          "sources": {
+            "entitlements_incremental": {
+              "path": "./results/enriched_raw"
+            },
+            "entitlements_snapshot": {
+              "path": "./results/enriched_raw"
+            }
+          },
+
+          "target": {
+            "subPath": ""
+          }
+        },
+
         "strategy": {
           "alwaysFull": false,
           "windowOfDays": 0,
