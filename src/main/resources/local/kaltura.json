@@ -1,0 +1,229 @@
+{
+  "enriched_raw": {
+    "kaltura": {
+      "catalogue": {
+        "storage": {
+          "sources": {
+            "catalogue": {
+              "path": "./seeds/raw"
+            }
+          },
+          "target": {
+            "subPath": ""
+          }
+        },
+        "strategy": {
+          "alwaysFull": true,
+          "windowOfDays": 0,
+          "historialMaximum": 24
+        }
+      },
+      "playbacklogs": {
+        "storage": {
+          "sources": {
+            "playbacklogs": {
+              "path": "./seeds/raw"
+            },
+            "device_inventory": {
+              "path": "./seeds/raw"
+            },
+            "entitlementscancellations": {
+              "path": "./seeds/raw"
+            }
+          },
+
+          "target": {
+            "subPath": ""
+          }
+        },
+
+        "strategy": {
+          "alwaysFull": true,
+          "windowOfDays": 0,
+          "historialMaximum": 24
+        }
+      },
+      "playbacksessions": {
+        "storage": {
+          "sources": {
+            "playbacksessions": {
+              "path": "./seeds/raw"
+            },
+            "entitlements": {
+              "path": "./seeds/raw"
+            }
+          },
+
+          "target": {
+            "subPath": ""
+          }
+        },
+
+        "strategy": {
+          "alwaysFull": true,
+          "windowOfDays": 0,
+          "historialMaximum": 24
+        }
+      },
+
+      "entitlements_incremental": {
+        "storage": {
+          "sources": {
+            "households": {
+              "path": "./seeds/raw"
+            },
+            "entitlementscancellations": {
+              "path": "./seeds/raw"
+            }
+          },
+          "target": {
+            "subPath": ""
+          }
+        },
+
+        "strategy": {
+          "alwaysFull": true,
+          "windowOfDays": 0,
+          "historialMaximum": 24
+        }
+      },
+
+      "entitlements_snapshot": {
+        "storage": {
+          "sources": {
+            "entitlements": {
+              "path": "./seeds/raw"
+            }
+          },
+
+          "target": {
+            "subPath": ""
+          }
+        },
+
+        "strategy": {
+          "alwaysFull": true,
+          "windowOfDays": 0,
+          "historialMaximum": 24
+        }
+      },
+      "households": {
+        "storage": {
+          "sources": {
+            "households": {
+              "path": "./seeds/raw"
+            }
+          },
+
+          "target": {
+            "subPath": ""
+          }
+        },
+
+        "strategy": {
+          "alwaysFull": true,
+          "windowOfDays": 0,
+          "historialMaximum": 24
+        }
+      },
+      "billing": {
+        "storage": {
+          "sources": {
+            "transactions": {
+              "path": "./seeds/raw"
+            }
+          },
+          "target": {
+            "subPath": ""
+          }
+        },
+        "strategy": {
+          "alwaysFull": true,
+          "windowOfDays": 0,
+          "historialMaximum": 24
+        }
+      }
+    }
+  },
+  "data_warehouse": {
+    "playbacks": {
+      "fact_catalogue": {
+        "storage": {
+          "sources": {
+            "catalogue": {
+              "path": "./results/enriched_raw"
+            }
+          },
+          "target": {
+            "subPath": ""
+          }
+        },
+        "strategy": {
+          "alwaysFull": false,
+          "windowOfDays": 0,
+          "historialMaximum": 24
+        }
+      },
+      "fact_playbacks": {
+        "storage": {
+          "sources": {
+            "fact_catalogue": "./results/data_warehouse",
+            "playbacklogs": "./results/enriched_raw/",
+            "playbacksessions": "./results/enriched_raw/"
+          },
+          "target": {
+            "subPath": ""
+          }
+        },
+        "strategy": {
+          "alwaysFull": false,
+          "windowOfDays": 0,
+          "historialMaximum": 24
+        }
+      }
+    },
+    "subscriptions": {
+
+      "fact_billing": {
+        "storage": {
+          "sources": {
+            "billing": {
+              "path": "./results/enriched_raw"
+            }
+          },
+          "target": {
+            "subPath": ""
+          }
+        },
+        "strategy": {
+          "alwaysFull": false,
+          "windowOfDays": 0,
+          "historialMaximum": 24
+        }
+      },
+
+      "fact_useractivity": {
+        "storage": {
+          "sources": {
+            "entitlements_incremental": {
+              "path": "./results/enriched_raw"
+            },
+            "entitlements_snapshot": {
+              "path": "./results/enriched_raw"
+            }
+          },
+
+          "target": {
+            "subPath": ""
+          }
+        },
+
+        "strategy": {
+          "alwaysFull": false,
+          "windowOfDays": 0,
+          "historialMaximum": 24
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+FROM alpine:3.15
+
+ARG HADOOP_VERSION=3.2.0
+ARG HADOOP_VERSION_SHORT=3.2
+ARG SPARK_VERSION=3.2.1
+ARG AWS_SDK_VERSION=1.11.375
+
+ARG SPARK_PACKAGE=spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION_SHORT}.tgz
+ARG SPARK_PACKAGE_URL=https://downloads.apache.org/spark/spark-${SPARK_VERSION}/${SPARK_PACKAGE}
+ARG HADOOP_JAR=https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/${HADOOP_VERSION}/hadoop-aws-${HADOOP_VERSION}.jar
+ARG AWS_SDK_JAR=https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/${AWS_SDK_VERSION}/aws-java-sdk-bundle-${AWS_SDK_VERSION}.jar
+ARG ELASTICSEARCH_JAR=https://repo1.maven.org/maven2/org/elasticsearch/elasticsearch-spark-30_2.12/7.14.0/elasticsearch-spark-30_2.12-7.14.0.jar
+ARG CASTS_JAR=https://repo1.maven.org/maven2/org/typelevel/cats-core_2.12/1.6.0/cats-core_2.12-1.6.0.jar
+
+# Add Spark tools to path
+ENV PATH="/opt/spark/bin/:${PATH}"
+
+ADD ${SPARK_PACKAGE_URL} /tmp/
+
+
+RUN echo "### Setup SO ###" \
+  && ln -sf /usr/share/zoneinfo/Etc/UTC /etc/localtime \
+  && echo "### Install dependencies ###" \
+  && apk update \
+  && apk --no-cache add libc6-compat jq curl coreutils openjdk8-jre bash snappy aws-cli \
+  && ln -s /lib/libc.musl-x86_64.so.1 /lib/ld-linux-x86-64.so.2 \
+  && tar xvf /tmp/$SPARK_PACKAGE -C /opt \
+  && ln -vs /opt/spark* /opt/spark \
+  && rm -rfv /tmp/*
+
+COPY spark-defaults.conf /opt/spark/conf/spark-defaults.conf
+ADD $HADOOP_JAR $ELASTICSEARCH_JAR $CASTS_JAR $AWS_SDK_JAR /opt/spark/jars/
+
+WORKDIR /app
+COPY ./app /app

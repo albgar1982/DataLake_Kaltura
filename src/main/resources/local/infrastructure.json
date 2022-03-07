@@ -1,0 +1,8 @@
+{
+  "aws": {
+    "storage": {
+      "pro": "./seeds/",
+      "stg": "./results/"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+
+  app:
+    build:
+      context: .
+      dockerfile: ./Docker/Dockerfile.local
+    command: tail -f
+    depends_on:
+      - drill
+    volumes:
+      - ../pom.xml:/app/pom.xml
+      - ../src:/app/src
+      - ../results:/app/results
+      - ../seeds:/app/seeds
+      - ./app:/app
+
+  drill:
+    image: apache/drill:1.19.0
+    entrypoint: /opt/drill/bin/drill-embedded
+    ports:
+      - 8047:8047
+    stdin_open: true
+
+
+  app_remote:
+    build:
+      context: .
+      dockerfile: Dockerfile.remote
+    command: tail -f
+    depends_on:
+      - elasticsearch
+    volumes:
+      - ./tests:/tests
+      - ./app:/app
+    ports:
+      - 6201:4040
+    env_file:
+      - ./Docker/.env
