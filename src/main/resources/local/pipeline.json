@@ -113,13 +113,12 @@
 
           "target": {
             "subPath": ""
+          },
+          "strategy": {
+            "alwaysFull": true,
+            "windowOfDays": 0,
+            "historialMaximum": 24
           }
-        },
-
-        "strategy": {
-          "alwaysFull": true,
-          "windowOfDays": 0,
-          "historialMaximum": 24
         }
       },
       "billing": {
@@ -208,7 +207,6 @@
               "path": "./results/enriched_raw"
             }
           },
-
           "target": {
             "subPath": ""
           },
