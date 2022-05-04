@@ -21,11 +21,9 @@
       <scope>compile</scope>
     </dependency>
     <dependency>
-      <groupId>DataLake</groupId>
-      <artifactId>Core</artifactId>
+      <groupId>com.DataLake.core</groupId>
+      <artifactId>DataLake_Core</artifactId>
       <version>1.0</version>
-      <systemPath>${project.basedir}/resources/Core-1.0.jar</systemPath>
-      <scope>system</scope>
     </dependency>
   </dependencies>
   <build>

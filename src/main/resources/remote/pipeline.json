@@ -13,12 +13,12 @@
           "target": {
             "environment": "stg",
             "path": "accedo_one"
+          },
+          "strategy": {
+            "alwaysFull": true,
+            "windowOfDays": 0,
+            "historialMaximum": 24
           }
-        },
-        "strategy": {
-          "alwaysFull": true,
-          "windowOfDays": 0,
-          "historialMaximum": 24
         }
       },
       "playbacks": {
@@ -32,12 +32,12 @@
           "target": {
             "environment": "stg",
             "path": "accedo_one"
+          },
+          "strategy": {
+            "alwaysFull": true,
+            "windowOfDays": 0,
+            "historialMaximum": 24
           }
-        },
-        "strategy": {
-          "alwaysFull": true,
-          "windowOfDays": 0,
-          "historialMaximum": 24
         }
       }
     }
@@ -55,12 +55,12 @@
           "target": {
             "environment": "stg",
             "path": ""
+          },
+          "strategy": {
+            "alwaysFull": false,
+            "windowOfDays": 0,
+            "historialMaximum": 24
           }
-        },
-        "strategy": {
-          "alwaysFull": false,
-          "windowOfDays": 0,
-          "historialMaximum": 24
         }
       },
       "playbackactivity": {
@@ -78,12 +78,12 @@
           "target": {
             "environment": "stg",
             "path": ""
+          },
+          "strategy": {
+            "alwaysFull": false,
+            "windowOfDays": 0,
+            "historialMaximum": 24
           }
-        },
-        "strategy": {
-          "alwaysFull": false,
-          "windowOfDays": 0,
-          "historialMaximum": 24
         }
       },
       "playbackseriesactivity": {
@@ -97,17 +97,18 @@
           "target": {
             "environment": "stg",
             "path": ""
+          },
+          "strategy": {
+            "alwaysFull": false,
+            "windowOfDays": 0,
+            "historialMaximum": 24
           }
         },
         "mapping": {
           "contentTypeValueOfSerie": "SERIES",
           "filterByContentTypes": ["episode"]
-        },
-        "strategy": {
-          "alwaysFull": false,
-          "windowOfDays": 0,
-          "historialMaximum": 24
         }
+
       }
     }
   }
