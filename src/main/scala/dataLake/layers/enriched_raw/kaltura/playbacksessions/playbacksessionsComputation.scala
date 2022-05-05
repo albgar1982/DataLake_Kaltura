@@ -8,8 +8,8 @@ object playbacksessionsComputation extends ComputationInterface {
 
   override def process(originDataFrames: Map[String, DataFrame]): DataFrame = {
 
-    val rawplaybackDF = originDataFrames.get("playbacksessions").get
-    val rawentitlementsDF = originDataFrames.get("entitlements").get
+    val rawplaybackDF = originDataFrames("playbacksessions")
+    val rawentitlementsDF = originDataFrames("entitlements")
 
 
     val filteredAndEnrichedDF = FilterAndEnrichInputDataTransformation.process(rawplaybackDF, rawentitlementsDF)

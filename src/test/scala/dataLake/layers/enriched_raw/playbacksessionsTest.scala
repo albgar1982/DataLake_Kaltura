@@ -20,7 +20,7 @@ class playbacksessionsTest extends AnyFunSuite with should.Matchers with BeforeA
       "--knowledgeUrl", "localhost:XXXX",
       "--layer", "enriched_raw",
       "--executionGroup", "kaltura",
-      "--table", "playbacks"
+      "--table", "playbacksessions"
     )
 
     val dateRange = DateRange(LocalDate.now().minusMonths(1), LocalDate.now())

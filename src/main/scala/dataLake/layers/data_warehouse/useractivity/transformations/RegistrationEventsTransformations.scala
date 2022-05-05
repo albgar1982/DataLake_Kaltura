@@ -15,10 +15,8 @@ object RegistrationEventsTransformations {
 
     val startRegistrationDF = createRegistration(householdsDF)
     val endRegistrationDF = endRegistration(householdsDF)
-
     val registrationUserDF = startRegistrationDF.union(endRegistrationDF)
 
-    registrationUserDF.show(30, false)
     registrationUserDF
 
   }
