@@ -1,10 +1,7 @@
 package dataLake.layers.enriched_raw
 
-import dataLake.core.{ExecutionControl, KnowledgeDataComputing, Launcher, Spark}
-import dataLake.core.spark.DateRange
+import dataLake.core.{DateRange, ExecutionControl, KnowledgeDataComputing, Launcher, Spark}
 import org.apache.spark.sql.SaveMode
-import org.apache.spark.sql.SaveMode._
-import org.apache.spark.sql.functions.{current_date, lit}
 import org.scalatest.BeforeAndAfter
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should
@@ -28,7 +25,6 @@ class playbacksessionsTest extends AnyFunSuite with should.Matchers with BeforeA
 
     val dateRange = DateRange(LocalDate.now().minusMonths(1), LocalDate.now())
 
-    KnowledgeDataComputing.maxMonthsToCompute = 24
     KnowledgeDataComputing.executionControl = new ExecutionControl(dateRange.start, dateRange.end)
   }
 
@@ -58,13 +54,6 @@ class playbacksessionsTest extends AnyFunSuite with should.Matchers with BeforeA
     df.write.partitionBy("brandid","daydate").mode(SaveMode.Overwrite).parquet(pathWriteParquet)
 
     //TODO change current_date() in daydate
-
-
-
-
-
-
-
   }
 
 }

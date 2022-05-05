@@ -15,12 +15,8 @@ object useractivityComputation extends ComputationInterface {
     val executionControl = KnowledgeDataComputing.executionControl
 
 
-    val playbacksCatalogueJoinedDF = .process()
+    //val playbacksCatalogueJoinedDF = .process()
 
-
-    deviceAndDatesDF
-
-
-
+    null
   }
 }

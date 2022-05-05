@@ -1,8 +1,11 @@
 {
-  "aws": {
-    "storage": {
-      "pro": "s3://jptvs-data-pro-us-west-2-0ef7c99a-355f-11eb-9916-2b51b3ca4c38/",
-      "stg": "s3://jptvs-data-stg-us-west-2-0ef7c99a-355f-11eb-9916-2b51b3ca4c38/"
+  "region": "us-west-2",
+  "storages": {
+    "buckets": {
+      "dataLake": {
+        "pro": "s3://jptvs-data-pro-us-west-2-0ef7c99a-355f-11eb-9916-2b51b3ca4c38/",
+        "stg": "s3://jptvs-data-stg-us-west-2-0ef7c99a-355f-11eb-9916-2b51b3ca4c38/"
+      }
     }
   }
 }

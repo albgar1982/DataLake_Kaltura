@@ -1,7 +1,6 @@
 package dataLake.layers.data_warehouse
 
-import dataLake.core.{ExecutionControl, KnowledgeDataComputing, Launcher, Spark}
-import dataLake.core.spark.DateRange
+import dataLake.core.{DateRange, ExecutionControl, KnowledgeDataComputing, Launcher, Spark}
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should
 import org.scalatest.BeforeAndAfter
@@ -25,7 +24,6 @@ class catalogueTests extends AnyFunSuite with should.Matchers with BeforeAndAfte
 
     val dateRange = DateRange(LocalDate.now().minusMonths(1), LocalDate.now())
 
-    KnowledgeDataComputing.maxMonthsToCompute = 24
     KnowledgeDataComputing.executionControl = new ExecutionControl(dateRange.start, dateRange.end)
   }
 

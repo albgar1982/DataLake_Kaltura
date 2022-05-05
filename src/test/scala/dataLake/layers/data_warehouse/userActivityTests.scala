@@ -1,7 +1,6 @@
 package dataLake.layers.data_warehouse
 
-import dataLake.core.{ExecutionControl, KnowledgeDataComputing, Launcher, Spark}
-import dataLake.core.spark.DateRange
+import dataLake.core.{DateRange, ExecutionControl, KnowledgeDataComputing, Launcher, Spark}
 import org.scalatest.BeforeAndAfter
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should
@@ -25,7 +24,6 @@ class userActivityTests extends AnyFunSuite with should.Matchers with BeforeAndA
 
     val dateRange = DateRange(LocalDate.now().minusMonths(1), LocalDate.now())
 
-    KnowledgeDataComputing.maxMonthsToCompute = 24
     KnowledgeDataComputing.executionControl = new ExecutionControl(dateRange.start, dateRange.end)
   }
 
@@ -41,7 +39,7 @@ class userActivityTests extends AnyFunSuite with should.Matchers with BeforeAndA
 
   test("step-by-step implementation") {
     KnowledgeDataComputing.isFull = false
-    try{
+    try {
 
       val spark = Spark.configureSparkSession()
 
@@ -49,8 +47,9 @@ class userActivityTests extends AnyFunSuite with should.Matchers with BeforeAndA
       val executionControl = KnowledgeDataComputing.executionControl
 
 
-
-    }catch{
+    } catch {
       case t: Throwable => t.printStackTrace(System.out)
         print(t)
     }
+  }
+}
